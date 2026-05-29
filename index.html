@@ -3,159 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Catálogo online AUSTIN Cosméticos — perfumes INUKA em promoção, creme corporal e água de colónia. Reservas pelo WhatsApp em Chimoio." />
-  <title>AUSTIN Cosméticos | Catálogo INUKA</title>
+  <title>AUSTIN Cosméticos | Catálogo INUKA em Chimoio</title>
+  <meta name="description" content="Catálogo AUSTIN Cosméticos em Chimoio. Produtos INUKA: perfumes, cremes corporais, cremes de mão, água de colónia e batons. Pagamento na hora ou a prestação." />
+  <meta name="theme-color" content="#111111" />
+  <meta property="og:title" content="AUSTIN Cosméticos | Produtos INUKA" />
+  <meta property="og:description" content="Perfumes em promoção, cremes, água de colónia e batons. Pagamento na hora ou a prestação." />
+  <meta property="og:image" content="imagens/hero-creme-perfume.webp" />
   <style>
     :root{
-      --black:#0e0d0b; --black2:#1d1a16; --gold:#c6a55a; --gold2:#efd78f;
-      --cream:#f7efe4; --white:#fff; --muted:#7b7067; --green:#25D366; --red:#b91c1c;
-      --shadow:0 18px 45px rgba(0,0,0,.15); --radius:24px;
+      --black:#111111;--black2:#1d1b18;--gold:#c7a35b;--gold2:#e2ca8a;--cream:#f7efe4;--paper:#fffaf2;--text:#1c1a17;--muted:#766e62;--line:#e9dfd2;--green:#1f7a4d;--red:#9f2f2f;--shadow:0 22px 70px rgba(28,19,8,.12);--radius:24px;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--black);line-height:1.55}
-    a{text-decoration:none;color:inherit} img{width:100%;display:block} button,input{font-family:inherit}
-    .promo{background:linear-gradient(90deg,#111,#3b2a0d,#111);color:#fff;text-align:center;padding:10px 16px;font-weight:900;letter-spacing:.2px}
-    .promo strong{color:var(--gold2)}
-    .topbar{background:var(--black);color:var(--gold2);padding:10px 6%;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:14px}
-    .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.07);padding:15px 6%;display:flex;justify-content:space-between;align-items:center;gap:18px}
-    .logo{font-size:23px;font-weight:950;letter-spacing:.5px;color:var(--gold);line-height:1}
-    .logo span{display:block;color:#70685f;font-size:11px;letter-spacing:3px;margin-top:5px}
-    .nav{display:flex;gap:20px;align-items:center}.nav a{font-weight:800;cursor:pointer;padding:8px 0}.nav a:hover,.nav a.active{color:var(--gold)}
-    .menuBtn{display:none;border:0;background:var(--black);color:var(--gold2);padding:10px 14px;border-radius:14px;font-size:22px;cursor:pointer}
-    .hero{min-height:640px;display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;padding:70px 6%;color:#fff;background:linear-gradient(120deg,rgba(0,0,0,.88),rgba(0,0,0,.42)),url('imagens/hero-creme-perfume.jpg') center/cover}
-    .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(239,215,143,.6);color:var(--gold2);background:rgba(255,255,255,.10);border-radius:999px;padding:9px 14px;font-weight:900;margin-bottom:18px}
-    .hero h1{font-size:clamp(38px,7vw,82px);line-height:.96;letter-spacing:-2px;max-width:760px;margin-bottom:20px}.hero h1 strong{color:var(--gold2)}
-    .hero p{font-size:clamp(17px,2vw,23px);max-width:640px;color:rgba(255,255,255,.92);margin-bottom:26px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap}.btn{border:0;border-radius:999px;padding:14px 22px;font-weight:950;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:16px}.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-    .btn.gold{background:var(--gold);color:#111}.btn.dark{background:#111;color:#fff;border:1px solid rgba(255,255,255,.2)}.btn.whats{background:var(--green);color:#fff}
-    .hero-card{background:rgba(255,255,255,.94);color:#111;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);max-width:430px;justify-self:end}.hero-card img{height:300px;object-fit:cover;border-radius:18px}.hero-card h3{font-size:25px;margin:16px 0 6px}.hero-card p{color:#5d554f;font-size:15px;margin:0 0 14px}.price-line{display:flex;align-items:end;gap:10px;flex-wrap:wrap}.old{text-decoration:line-through;color:#877b70;font-weight:800}.new{font-size:30px;font-weight:950;color:var(--red)}
-    section{padding:70px 6%}.section-head{text-align:center;max-width:820px;margin:0 auto 35px}.section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.1;margin-bottom:10px}.section-head p{color:var(--muted);font-size:18px}
-    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-35px;position:relative;z-index:2}.trust-item{background:#fff;border-radius:20px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.08);font-weight:850}.trust-item span{font-size:13px;letter-spacing:2px;color:var(--gold);display:block;margin-bottom:9px;font-weight:950}.trust-item p{color:var(--muted);font-weight:600;font-size:14px}
-    .controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}.filter,.search{border:1px solid #ddd;background:#fff;border-radius:999px;padding:12px 17px;font-weight:800}.filter.active{background:#111;color:var(--gold2);border-color:#111}.search{min-width:260px;outline:0}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.10);transition:.25s;display:flex;flex-direction:column}.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.card-img{height:285px;background:#eee}.card-img img{height:100%;object-fit:cover}.card-body{padding:22px;display:flex;flex-direction:column;flex:1}.tag{align-self:flex-start;background:#f4e6c2;color:#5c430e;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950;margin-bottom:12px}.card h3{font-size:22px;margin-bottom:8px}.card p{color:var(--muted);margin-bottom:16px}.card .prices{margin-top:auto;margin-bottom:16px}.small{font-size:14px;color:#71665e}.promo-price{font-size:28px;color:var(--red);font-weight:950}.normal-price{font-size:24px;color:#111;font-weight:950}.payment{display:grid;grid-template-columns:1fr;gap:9px;margin-top:12px}.btn.pay-now{background:#111;color:#fff}.btn.pay-install{background:#f4e6c2;color:#4b3508;border:1px solid #d6bd76}.deadline{font-size:13px;color:#6f6258;font-weight:800;margin-top:6px}
-    .category-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.cat{min-height:180px;border-radius:24px;overflow:hidden;position:relative;color:#fff;display:flex;align-items:end;padding:22px;box-shadow:var(--shadow);cursor:pointer}.cat:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.72));z-index:1}.cat img{position:absolute;inset:0;height:100%;object-fit:cover}.cat h3{position:relative;z-index:2;font-size:24px}.cat p{position:relative;z-index:2;color:rgba(255,255,255,.85)}
-    .about{background:linear-gradient(135deg,#111,#2b2114);color:#fff}.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.about img{border-radius:28px;box-shadow:var(--shadow)}.about h2{font-size:42px;line-height:1.08;margin-bottom:15px}.about p{color:rgba(255,255,255,.82);font-size:18px;margin-bottom:18px}.list{display:grid;gap:10px}.list div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:13px 15px;font-weight:800}
-    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.quote{background:#fff;border-radius:22px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.08)}.quote p{color:#554b44;margin-bottom:15px}.quote strong{color:#111}
-    .cta{background:var(--gold);color:#111;text-align:center}.cta h2{font-size:42px;margin-bottom:12px}.cta p{font-size:18px;margin-bottom:22px}.footer{background:#111;color:#b8b0a5;padding:45px 6% 20px}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.footer h4{color:var(--gold2);margin-bottom:14px}.footer a,.footer p{display:block;margin-bottom:8px}.bottom{text-align:center;border-top:1px solid #2d2d2d;margin-top:25px;padding-top:18px;font-size:14px}.float{position:fixed;right:22px;bottom:22px;background:var(--green);color:#fff;border-radius:50%;width:62px;height:62px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:950;box-shadow:var(--shadow);z-index:60}
-    @media(max-width:900px){.hero,.about-wrap{grid-template-columns:1fr}.hero-card{justify-self:start}.trust,.grid,.category-strip,.testimonials,.foot{grid-template-columns:1fr 1fr}.nav{display:none;position:absolute;right:6%;top:72px;background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:18px;flex-direction:column;align-items:flex-start}.nav.open{display:flex}.menuBtn{display:block}}
-    @media(max-width:560px){.topbar{font-size:13px}.hero{padding:55px 5%;min-height:auto}.trust,.grid,.category-strip,.testimonials,.foot{grid-template-columns:1fr}section{padding:55px 5%}.hero-card img,.card-img{height:230px}.cta h2,.about h2{font-size:32px}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#fffaf2 0%,#f4eadb 100%);color:var(--text)}
+    a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(1180px,92%);margin:auto}.smallcaps{letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:var(--gold)}
+    .notice{background:var(--black);color:#f5e7c3;text-align:center;padding:.72rem 1rem;font-weight:700;letter-spacing:.02em}.notice strong{color:#fff}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06)}.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}.brand{line-height:1}.brand b{font-size:1.25rem;color:var(--gold);letter-spacing:.06em}.brand span{display:block;font-size:.68rem;letter-spacing:.38em;color:#6f675d;margin-top:.28rem;font-weight:800}.menu{display:flex;gap:1.2rem;align-items:center;font-weight:800}.menu a{padding:.6rem .2rem}.menu a:hover{color:var(--gold)}.menu-btn{display:none;background:var(--black);color:white;border:0;border-radius:14px;padding:.72rem .9rem;font-weight:800}
+    .hero{padding:5.2rem 0 3.6rem}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:2.2rem;align-items:center}.hero-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:2.2rem}.hero h1{font-size:clamp(2.4rem,5vw,5rem);line-height:.98;margin:.7rem 0 1rem;letter-spacing:-.06em}.lead{font-size:1.12rem;color:var(--muted);line-height:1.8;max-width:62ch}.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.7rem}.btn{border:0;border-radius:999px;padding:.95rem 1.25rem;font-weight:900;cursor:pointer;transition:.2s ease;display:inline-flex;align-items:center;justify-content:center;gap:.45rem}.btn-primary{background:var(--black);color:white}.btn-primary:hover{transform:translateY(-2px);background:#000}.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17130c}.btn-light{background:white;border:1px solid var(--line);color:var(--text)}.hero-image{position:relative;border-radius:34px;overflow:hidden;min-height:440px;box-shadow:var(--shadow);background:#ddd}.hero-image img{width:100%;height:100%;object-fit:cover}.promo-box{position:absolute;left:1rem;right:1rem;bottom:1rem;background:rgba(17,17,17,.86);color:white;border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:1.1rem}.promo-box b{color:#f4d58b}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.5rem}.metric{background:#fff;border:1px solid var(--line);padding:1rem;border-radius:18px}.metric b{display:block;font-size:1.4rem}.metric span{font-size:.82rem;color:var(--muted);font-weight:700}
+    section{padding:3.5rem 0}.section-head{text-align:center;margin-bottom:2rem}.section-head h2{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.04em;margin:.25rem 0}.section-head p{color:var(--muted);line-height:1.7;max-width:760px;margin:auto}.tools{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1.8rem}.search{width:min(310px,100%);border:1px solid var(--line);border-radius:999px;padding:1rem 1.1rem;font-weight:700;background:white}.filter{border:1px solid var(--line);background:white;border-radius:999px;padding:.88rem 1.05rem;font-weight:900;cursor:pointer}.filter.active{background:var(--black);color:white;border-color:var(--black)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.product{background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 18px 50px rgba(33,24,12,.08);display:flex;flex-direction:column}.photo{height:270px;background:#eee;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;left:1rem;top:1rem;background:#fff1c5;border:1px solid #ebd28d;color:#5a420b;border-radius:999px;font-weight:900;padding:.48rem .75rem;font-size:.72rem}.content{padding:1.15rem;display:flex;flex-direction:column;gap:.82rem;flex:1}.content h3{margin:0;font-size:1.18rem}.desc{margin:0;color:var(--muted);line-height:1.55}.rating{font-weight:900;color:#7a5a18;font-size:.95rem}.prices{display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}.old{text-decoration:line-through;color:#948b80;font-weight:800}.price{font-size:1.4rem;font-weight:950;color:#111}.term{background:#f5efe4;border:1px solid var(--line);border-radius:14px;padding:.75rem;color:#554c42;font-weight:800;font-size:.9rem}.pay-buttons{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:auto}.pay-buttons .btn{padding:.85rem .6rem;font-size:.85rem}.review-toggle{margin-top:.2rem;width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem;font-weight:900;cursor:pointer}.reviews{display:none;border-top:1px solid var(--line);padding:1rem;background:#fffaf2}.reviews.open{display:block}.review-list{display:grid;gap:.7rem;max-height:220px;overflow:auto;margin-bottom:.8rem}.review{background:white;border:1px solid var(--line);border-radius:16px;padding:.8rem}.review b{display:block}.review small{color:var(--muted)}.review p{margin:.45rem 0 0;color:#544d45}.review-form{display:grid;gap:.6rem}.review-form input,.review-form textarea,.review-form select{width:100%;border:1px solid var(--line);border-radius:14px;padding:.78rem;font-family:inherit}.review-form button{background:var(--black);color:white;border:0;border-radius:14px;padding:.85rem;font-weight:900;cursor:pointer}.empty{display:none;text-align:center;color:var(--muted);font-weight:800;padding:2rem}
+    .steps,.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.step,.trust-card{background:white;border:1px solid var(--line);border-radius:22px;padding:1.25rem;box-shadow:0 14px 40px rgba(0,0,0,.05)}.num{width:42px;height:42px;border-radius:999px;background:var(--black);color:var(--gold2);display:grid;place-items:center;font-weight:950;margin-bottom:.9rem}.step h3,.trust-card h3{margin:.3rem 0}.step p,.trust-card p{color:var(--muted);line-height:1.6;margin:0}.payment-box{background:var(--black);color:white;border-radius:30px;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:center}.payment-box p{color:#cfc7bc;line-height:1.7}.payment-list{display:grid;gap:.7rem}.payment-item{display:flex;justify-content:space-between;gap:1rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.09);padding:1rem;border-radius:16px}.payment-item b{color:#f2d58a}
+    .contact{background:#fff;border-top:1px solid var(--line)}.contact-card{background:linear-gradient(135deg,#111,#2a241c);color:white;border-radius:32px;padding:2rem;display:grid;grid-template-columns:1.2fr .8fr;gap:1.2rem;align-items:center}.contact-card p{color:#d8d0c5;line-height:1.7}.wa-float{position:fixed;right:1.2rem;bottom:1.2rem;background:#1f7a4d;color:white;width:64px;height:64px;border-radius:999px;display:grid;place-items:center;font-weight:950;box-shadow:0 20px 50px rgba(0,0,0,.28);z-index:30;border:3px solid #fff}.bottom-bar{display:none;position:fixed;left:0;right:0;bottom:0;background:#111;color:white;z-index:25;padding:.5rem;border-top:1px solid rgba(255,255,255,.1);gap:.4rem}.bottom-bar a{flex:1;text-align:center;padding:.7rem .4rem;border-radius:12px;font-weight:800;font-size:.84rem}.bottom-bar a:last-child{background:#1f7a4d}.top-btn{position:fixed;right:1.2rem;bottom:5.5rem;background:white;border:1px solid var(--line);border-radius:999px;padding:.75rem .85rem;font-weight:900;display:none;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:26}
+    footer{background:#0d0d0d;color:#b7b0a7;padding:2rem 0;text-align:center}.footer-title{color:var(--gold);font-weight:950;letter-spacing:.1em}
+    @media(max-width:900px){.menu{display:none;position:absolute;left:4%;right:4%;top:74px;background:white;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:1rem;flex-direction:column;align-items:stretch}.menu.open{display:flex}.menu-btn{display:block}.hero-grid,.payment-box,.contact-card{grid-template-columns:1fr}.hero{padding-top:2rem}.grid{grid-template-columns:1fr 1fr}.steps,.trust{grid-template-columns:1fr 1fr}.hero-image{min-height:350px}.wa-float{display:none}.bottom-bar{display:flex}body{padding-bottom:72px}}
+    @media(max-width:620px){.grid,.steps,.trust{grid-template-columns:1fr}.pay-buttons{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.photo{height:250px}.notice{font-size:.86rem}.brand b{font-size:1.05rem}.section-head{text-align:left}.section-head p{margin:0}.tools{justify-content:flex-start}.hero-card{padding:1.4rem}.hero h1{font-size:2.55rem}.contact-card,.payment-box{padding:1.4rem;border-radius:24px}}
   </style>
 </head>
 <body>
-  <div class="promo">Promoção especial: <strong>Perfumes INUKA de MT 1.200 por apenas MT 900</strong> — reservas pelo WhatsApp</div>
-  <div class="topbar"><span>Chimoio — 7 de Abril</span><span>WhatsApp: <strong>87 988 1642</strong></span><span>Entregas disponíveis em Chimoio</span></div>
-  <header class="header">
-    <a class="logo" href="#inicio">AUSTIN COSMÉTICOS<span>ALWAYS WITH YOU</span></a>
-    <nav class="nav" id="nav">
-      <a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#categorias">Categorias</a><a href="#confianca">Confiança</a><a href="#contacto">Contacto</a>
-    </nav>
-    <button class="menuBtn" onclick="toggleMenu()">☰</button>
-  </header>
-
-  <main id="inicio" class="hero">
-    <div>
-      <div class="badge">Produtos INUKA | Promoção limitada</div>
-      <h1>Perfumes INUKA com preço especial: <strong>MT 900</strong></h1>
-      <p>Escolha o seu aroma favorito e reserve pelo WhatsApp. Temos também creme corporal a MT 700, água de colónia a MT 600 e cremes de mão a MT 300.</p>
-      <div class="actions"><a class="btn gold" href="#catalogo">Ver catálogo</a><button class="btn whats" onclick="whats('Olá! Quero reservar produtos INUKA da promoção.')">Reservar agora</button></div>
+  <div class="notice">Promoção especial: <strong>Perfumes INUKA de MT 1.200 por MT 900</strong> — pagamento na hora ou a prestação.</div>
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand"><b>AUSTIN COSMÉTICOS</b><span>ALWAYS WITH YOU</span></a>
+      <nav class="menu" id="menu">
+        <a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#pagamento">Pagamento</a><a href="#comentarios">Avaliações</a><a href="#contacto">Contacto</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn">Menu</button>
     </div>
-    <div class="hero-card">
-      <img src="imagens/million-deluxe.jpg" alt="Perfume INUKA Million Deluxe">
-      <h3>Perfumes em promoção</h3>
-      <p>Preço normal e promoção bem visíveis para facilitar a decisão do cliente.</p>
-      <div class="price-line"><span class="old">MT 1.200</span><span class="new">MT 900</span></div>
+  </header>
+  <main id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="smallcaps">Catálogo INUKA em Chimoio</div>
+        <h1>Beleza, cuidado e facilidade de pagamento.</h1>
+        <p class="lead">Escolha o produto, selecione pagamento na hora ou a prestação, e envie o pedido diretamente pelo WhatsApp com a mensagem já preenchida.</p>
+        <div class="actions"><a class="btn btn-primary" href="#catalogo">Ver catálogo</a><button class="btn btn-gold" onclick="contactarGeral()">Reservar pelo WhatsApp</button></div>
+        <div class="metrics"><div class="metric"><b>MT 900</b><span>Perfumes em promoção</span></div><div class="metric"><b>1 mês</b><span>Prazo para perfumes e cremes corporais</span></div><div class="metric"><b>Chimoio</b><span>7 de Abril</span></div></div>
+      </div>
+      <div class="hero-image"><img src="imagens/hero-creme-perfume.webp" alt="Produtos INUKA AUSTIN Cosméticos" loading="eager"><div class="promo-box"><b>Oferta em destaque</b><br>Perfumes a MT 900, creme corporal a MT 700, água de colónia a MT 600 e cremes de mão a MT 300.</div></div>
     </div>
   </main>
-
-  <section class="trust" aria-label="Vantagens">
-    <div class="trust-item"><span>01</span>Produtos INUKA<p>Catálogo com produtos selecionados.</p></div>
-    <div class="trust-item"><span>02</span>Reserva fácil<p>Pedido direto pelo WhatsApp.</p></div>
-    <div class="trust-item"><span>03</span>Chimoio<p>Atendimento em 7 de Abril.</p></div>
-    <div class="trust-item"><span>04</span>Promoção<p>Perfumes a MT 900 por tempo limitado.</p></div>
-  </section>
-
   <section id="catalogo">
-    <div class="section-head"><h2>Catálogo de produtos</h2><p>Use os filtros ou pesquise pelo nome do produto. O botão de cada produto já abre o WhatsApp com a mensagem pronta.</p></div>
-    <div class="controls">
-      <input class="search" id="search" placeholder="Pesquisar produto..." oninput="renderProducts()">
-      <button class="filter active" onclick="setFilter('todos',this)">Todos</button>
-      <button class="filter" onclick="setFilter('perfumes',this)">Perfumes</button>
-      <button class="filter" onclick="setFilter('cremes',this)">Creme corporal</button>
-      <button class="filter" onclick="setFilter('cremes-mao',this)">Cremes de mão</button>
-      <button class="filter" onclick="setFilter('colonia',this)">Água de colónia</button>
-      <button class="filter" onclick="setFilter('batons',this)">Batons</button>
-    </div>
-    <div class="grid" id="products"></div>
-  </section>
-
-  <section id="categorias" style="padding-top:10px">
-    <div class="section-head"><h2>Categorias em destaque</h2><p>Organização simples para o cliente encontrar rápido o que procura.</p></div>
-    <div class="category-strip">
-      <div class="cat" onclick="setFilterByName('perfumes')"><img src="imagens/olimpia.jpg" alt="Perfumes"><div><h3>Perfumes</h3><p>Promoção MT 900</p></div></div>
-      <div class="cat" onclick="setFilterByName('cremes')"><img src="imagens/creme-corporal.jpg" alt="Creme corporal"><div><h3>Creme corporal</h3><p>MT 700</p></div></div>
-      <div class="cat" onclick="setFilterByName('cremes-mao')"><img src="imagens/creme-mao.jpg" alt="Cremes de mão"><div><h3>Cremes de mão</h3><p>MT 300</p></div></div>
-      <div class="cat" onclick="setFilterByName('colonia')"><img src="imagens/body-mist.jpg" alt="Água de colónia"><div><h3>Água de colónia</h3><p>MT 600</p></div></div>
-      <div class="cat" onclick="setFilterByName('batons')"><img src="imagens/batons.jpg" alt="Batons"><div><h3>Batons</h3><p>Cores vibrantes</p></div></div>
+    <div class="container">
+      <div class="section-head"><div class="smallcaps">Produtos</div><h2>Catálogo de produtos</h2><p>Use os filtros ou pesquise pelo nome. Cada produto tem botões separados para pagamento na hora e pagamento a prestação.</p></div>
+      <div class="tools"><input id="search" class="search" placeholder="Pesquisar produto..." aria-label="Pesquisar produto"><button class="filter active" data-filter="todos">Todos</button><button class="filter" data-filter="perfumes">Perfumes</button><button class="filter" data-filter="creme-corporal">Creme corporal</button><button class="filter" data-filter="creme-mao">Cremes de mão</button><button class="filter" data-filter="agua-colonia">Água de colónia</button><button class="filter" data-filter="batons">Batons</button></div>
+      <div class="grid" id="products"></div><div class="empty" id="empty">Nenhum produto encontrado.</div>
     </div>
   </section>
-
-  <section id="confianca" class="about">
-    <div class="about-wrap">
-      <div><img src="imagens/creme-corporal.jpg" alt="Produtos INUKA"></div>
-      <div>
-        <h2>Por que comprar connosco?</h2>
-        <p>A AUSTIN Cosméticos facilita a reserva dos seus produtos INUKA favoritos, com atendimento rápido, localização clara e preços em destaque.</p>
-        <div class="list"><div>Produtos organizados por categoria</div><div>Reserva imediata pelo WhatsApp</div><div>Promoções visíveis no catálogo</div><div>Entregas disponíveis em Chimoio</div></div>
-      </div>
+  <section id="pagamento">
+    <div class="container payment-box">
+      <div><div class="smallcaps">Modalidades</div><h2>Pagamento flexível</h2><p>O cliente pode pagar na hora ou escolher pagamento a prestação. O prazo muda conforme o tipo de produto.</p><button class="btn btn-gold" onclick="contactarGeral()">Falar sobre pagamento</button></div>
+      <div class="payment-list"><div class="payment-item"><span>Perfumes</span><b>até 1 mês</b></div><div class="payment-item"><span>Cremes corporais</span><b>até 1 mês</b></div><div class="payment-item"><span>Batons</span><b>até 3 semanas</b></div><div class="payment-item"><span>Cremes de mão</span><b>até 2 semanas</b></div><div class="payment-item"><span>Água de colónia</span><b>a combinar</b></div></div>
     </div>
   </section>
-
   <section>
-    <div class="section-head"><h2>Clientes satisfeitos</h2><p>Use estes depoimentos para passar confiança. Pode trocar depois por mensagens reais dos seus clientes.</p></div>
-    <div class="testimonials">
-      <div class="quote"><p>“Produto muito cheiroso e atendimento rápido.”</p><strong>Cliente em Chimoio</strong></div>
-      <div class="quote"><p>“Gostei da facilidade para reservar pelo WhatsApp.”</p><strong>Cliente satisfeita</strong></div>
-      <div class="quote"><p>“A promoção dos perfumes vale muito a pena.”</p><strong>Cliente INUKA</strong></div>
-    </div>
+    <div class="container"><div class="section-head"><div class="smallcaps">Funcionamento</div><h2>Como comprar</h2></div><div class="steps"><div class="step"><div class="num">01</div><h3>Escolha</h3><p>Veja o catálogo e selecione o produto desejado.</p></div><div class="step"><div class="num">02</div><h3>Defina o pagamento</h3><p>Escolha pagar na hora ou a prestação.</p></div><div class="step"><div class="num">03</div><h3>Envie no WhatsApp</h3><p>A mensagem vai pronta com produto, preço e prazo.</p></div><div class="step"><div class="num">04</div><h3>Combine a entrega</h3><p>Finalize a reserva e combine levantamento ou entrega.</p></div></div></div>
   </section>
-
-  <section id="contacto" class="cta">
-    <h2>Pronto para reservar?</h2><p>Fale connosco pelo WhatsApp e garanta o seu produto INUKA.</p><button class="btn dark" onclick="whats('Olá! Vim pelo site e quero fazer uma reserva.')">Falar no WhatsApp</button>
+  <section id="comentarios">
+    <div class="container"><div class="section-head"><div class="smallcaps">Confiança</div><h2>Avaliações e comentários</h2><p>O site agora permite avaliações por produto. As avaliações adicionadas ficam guardadas no navegador do visitante. Para avaliações públicas para todos os clientes, será necessário ligar uma base de dados como Supabase ou Firebase.</p></div><div class="trust"><div class="trust-card"><h3>Produtos INUKA</h3><p>Catálogo organizado por categoria e com preços visíveis.</p></div><div class="trust-card"><h3>Atendimento rápido</h3><p>Botões de WhatsApp com mensagem automática.</p></div><div class="trust-card"><h3>Pagamento flexível</h3><p>Opção de pagamento na hora ou a prestação.</p></div><div class="trust-card"><h3>Comentários por produto</h3><p>Cliente pode deixar nota e comentário dentro do site.</p></div></div></div>
   </section>
-
-  <footer class="footer"><div class="foot"><div><h4>AUSTIN COSMÉTICOS</h4><p>Produtos INUKA em Chimoio — Always With You.</p></div><div><h4>Contacto</h4><p>87 988 1642</p><p>Chimoio — 7 de Abril</p></div><div><h4>Links</h4><a href="#catalogo">Catálogo</a><a href="#confianca">Confiança</a><a href="#contacto">Contacto</a></div></div><div class="bottom">© 2026 AUSTIN Cosméticos. Todos os direitos reservados.</div></footer>
-  <button class="float" onclick="whats('Olá! Gostaria de saber mais sobre os produtos INUKA.')">WA</button>
-
-<script>
-const WHATS='258879881642';
-let currentFilter='todos';
-const products=[
-  {cat:'perfumes',name:'Perfume INUKA — Million Deluxe',desc:'Fragrância marcante e sofisticada. Promoção por tempo limitado.',img:'imagens/million-deluxe.jpg',old:1200,price:900,tag:'PROMOÇÃO',prazo:'1 mês'},
-  {cat:'perfumes',name:'Perfume INUKA — Olimpia',desc:'Fragrância elegante para momentos especiais.',img:'imagens/olimpia.jpg',old:1200,price:900,tag:'PROMOÇÃO',prazo:'1 mês'},
-  {cat:'perfumes',name:'Perfume INUKA — Linha Classic',desc:'Perfume INUKA com aroma duradouro e embalagem elegante.',img:'imagens/hero-creme-perfume.jpg',old:1200,price:900,tag:'PROMOÇÃO',prazo:'1 mês'},
-  {cat:'cremes',name:'Creme corporal INUKA',desc:'Creme corporal para pele macia, hidratada e perfumada.',img:'imagens/creme-corporal.jpg',price:700,tag:'CREME CORPORAL',prazo:'1 mês'},
-  {cat:'cremes-mao',name:'Cremes de mão INUKA — Modern Me',desc:'Cremes de mão com toque seco, fórmula leve e rápida absorção.',img:'imagens/creme-mao.jpg',price:300,tag:'CREMES DE MÃO',prazo:'2 semanas'},
-  {cat:'colonia',name:'Água de colónia / Body Mist INUKA',desc:'Ideal para o dia a dia, refrescante e perfumada.',img:'imagens/body-mist.jpg',price:600,tag:'ÁGUA DE COLÓNIA',prazo:'a combinar'},
-  {cat:'batons',name:'Batons INUKA',desc:'Cores bonitas e acabamento elegante para várias ocasiões.',img:'imagens/batons.jpg',price:null,tag:'BATONS',prazo:'3 semanas'}
-];
-function money(v){return 'MT '+Number(v).toLocaleString('pt-MZ')}
-function whats(msg){window.open('https://wa.me/'+WHATS+'?text='+encodeURIComponent('AUSTIN COSMÉTICOS\n\n'+msg),'_blank')}
-function productMessage(p){let preco=p.price?`Preço: ${money(p.price)}`:'Quero saber o preço'; return `Olá! Gostaria de reservar:\n\nProduto: ${p.name}\n${preco}\n\nEstou em Chimoio.`}
-function renderProducts(){
-  const q=document.getElementById('search').value.toLowerCase().trim(); const box=document.getElementById('products');
-  const filtered=products.filter(p=>(currentFilter==='todos'||p.cat===currentFilter)&&(!q||p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)));
-  box.innerHTML=filtered.map(p=>`<article class="card"><div class="card-img"><img src="${p.img}" alt="${p.name}"></div><div class="card-body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="prices">${p.old?`<div class="small">Antes: <span class="old">${money(p.old)}</span></div>`:''}${p.price?`<div class="${p.old?'promo-price':'normal-price'}">${p.old?'Agora: ':''}${money(p.price)}</div>`:`<div class="normal-price">Preço sob consulta</div>`}<div class="deadline">Prazo para prestação: ${p.prazo}</div></div><div class="payment"><button class="btn pay-now" onclick='whats(${JSON.stringify(productMessage(p,'na-hora'))})'>Pagar na hora</button><button class="btn pay-install" onclick='whats(${JSON.stringify(productMessage(p,'prestacao'))})'>Pagar a prestação</button></div></div></article>`).join('') || '<p style="text-align:center;grid-column:1/-1;font-weight:800">Nenhum produto encontrado.</p>'
-}
-function setFilter(f,el){currentFilter=f;document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));el.classList.add('active');renderProducts()}
-function setFilterByName(f){
-  currentFilter=f;
-  const labels={todos:'Todos',perfumes:'Perfumes',cremes:'Creme corporal','cremes-mao':'Cremes de mão',colonia:'Água de colónia',batons:'Batons'};
-  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.textContent.trim()===labels[f]));
-  document.getElementById('catalogo').scrollIntoView();renderProducts()
-}
-function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
-renderProducts();
-</script>
+  <section id="contacto" class="contact">
+    <div class="container contact-card"><div><div class="smallcaps">Contacto</div><h2>AUSTIN Cosméticos</h2><p>Localização: Chimoio — 7 de Abril<br>WhatsApp: 87 988 1642<br>Produtos INUKA com reserva pelo WhatsApp.</p></div><button class="btn btn-gold" onclick="contactarGeral()">Abrir WhatsApp</button></div>
+  </section>
+  <a class="wa-float" href="https://wa.me/258879881642" target="_blank" rel="noopener noreferrer">WA</a><button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Topo</button>
+  <div class="bottom-bar"><a href="#catalogo">Catálogo</a><a href="#pagamento">Pagamento</a><a href="https://wa.me/258879881642" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+  <footer><div class="container"><div class="footer-title">AUSTIN COSMÉTICOS</div><p>Chimoio — 7 de Abril | WhatsApp 87 988 1642</p></div></footer>
+  <script>
+  const numeroWhatsApp='258879881642';
+  const produtos=[
+    {id:'million-deluxe',nome:'Perfume INUKA — Million Deluxe',categoria:'perfumes',img:'imagens/million-deluxe.webp',desc:'Fragrância sofisticada para presença marcante.',preco:900,precoAntigo:1200,prazo:'até 1 mês',badge:'PROMOÇÃO',rating:'4.9',reviews:18},
+    {id:'olimpia',nome:'Perfume INUKA — Olimpia',categoria:'perfumes',img:'imagens/olimpia.webp',desc:'Perfume elegante, intenso e de excelente apresentação.',preco:900,precoAntigo:1200,prazo:'até 1 mês',badge:'PROMOÇÃO',rating:'4.8',reviews:14},
+    {id:'classic',nome:'Perfume INUKA — Linha Classic',categoria:'perfumes',img:'imagens/hero-creme-perfume.webp',desc:'Opção clássica para uso diário e momentos especiais.',preco:900,precoAntigo:1200,prazo:'até 1 mês',badge:'PROMOÇÃO',rating:'4.7',reviews:11},
+    {id:'creme-corporal',nome:'Creme corporal INUKA',categoria:'creme-corporal',img:'imagens/creme-corporal.webp',desc:'Loção corporal para pele perfumada, macia e hidratada.',preco:700,prazo:'até 1 mês',badge:'CUIDADO CORPORAL',rating:'4.8',reviews:12},
+    {id:'creme-mao',nome:'Cremes de mão INUKA',categoria:'creme-mao',img:'imagens/creme-mao.webp',desc:'Creme de mão prático para hidratação diária.',preco:300,prazo:'até 2 semanas',badge:'NOVO',rating:'4.9',reviews:7},
+    {id:'body-mist',nome:'Água de colónia / Body Mist INUKA',categoria:'agua-colonia',img:'imagens/body-mist.webp',desc:'Fragrância leve para cabelo e corpo.',preco:600,prazo:'a combinar',badge:'LIMITED EDITION',rating:'4.8',reviews:9},
+    {id:'batons',nome:'Batons INUKA',categoria:'batons',img:'imagens/batons.webp',desc:'Cores modernas para diferentes ocasiões.',preco:0,prazo:'até 3 semanas',badge:'CATÁLOGO',rating:'4.7',reviews:10}
+  ];
+  const reviewsBase={
+    'million-deluxe':[{n:'Cliente AUSTIN',s:5,t:'Boa apresentação e fragrância marcante.'}],
+    'olimpia':[{n:'Cliente AUSTIN',s:5,t:'Gostei muito do perfume e do atendimento.'}],
+    'creme-corporal':[{n:'Cliente AUSTIN',s:5,t:'Deixa a pele perfumada e hidratada.'}],
+    'creme-mao':[{n:'Cliente AUSTIN',s:5,t:'Tamanho prático para levar na bolsa.'}],
+    'body-mist':[{n:'Cliente AUSTIN',s:4,t:'Fragrância leve para usar todos os dias.'}],
+    'batons':[{n:'Cliente AUSTIN',s:4,t:'Cores bonitas e boa variedade.'}]
+  };
+  const grid=document.getElementById('products'), search=document.getElementById('search'), empty=document.getElementById('empty'); let filtro='todos';
+  function money(v){return v?`MT ${v.toLocaleString('pt-MZ')}`:'Consultar'}
+  function mensagemProduto(p,tipo){return encodeURIComponent(`Olá, AUSTIN Cosméticos. Gostaria de reservar o produto: ${p.nome}.\nPreço: ${money(p.preco)}.\nForma de pagamento: ${tipo}.\nPrazo da prestação: ${p.prazo}.\nLocalização: Chimoio - 7 de Abril.`)}
+  function abrirWhats(p,tipo){window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagemProduto(p,tipo)}`,'_blank','noopener,noreferrer')}
+  function contactarGeral(){const m=encodeURIComponent('Olá, AUSTIN Cosméticos. Gostaria de mais informações sobre os produtos INUKA e formas de pagamento.');window.open(`https://wa.me/${numeroWhatsApp}?text=${m}`,'_blank','noopener,noreferrer')}
+  function getReviews(id){return [...(reviewsBase[id]||[]),...JSON.parse(localStorage.getItem('reviews_'+id)||'[]')]}
+  function stars(n){return '★'.repeat(Number(n))+'☆'.repeat(5-Number(n))}
+  function reviewHTML(id){const list=getReviews(id).map(r=>`<div class="review"><b>${escapeHTML(r.n)} <small>${stars(r.s)}</small></b><p>${escapeHTML(r.t)}</p></div>`).join('');return `<div class="reviews" id="rev-${id}"><div class="review-list">${list}</div><form class="review-form" onsubmit="salvarReview(event,'${id}')"><input name="nome" placeholder="Seu nome" required><select name="nota" required><option value="5">5 estrelas</option><option value="4">4 estrelas</option><option value="3">3 estrelas</option><option value="2">2 estrelas</option><option value="1">1 estrela</option></select><textarea name="texto" placeholder="Escreva o seu comentário" rows="3" required></textarea><button>Publicar comentário neste aparelho</button></form></div>`}
+  function escapeHTML(str){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]))}
+  function render(){const q=search.value.toLowerCase().trim();const vis=produtos.filter(p=>(filtro==='todos'||p.categoria===filtro)&&p.nome.toLowerCase().includes(q));grid.innerHTML=vis.map(p=>`<article class="product"><div class="photo"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="badge">${p.badge}</span></div><div class="content"><div class="rating">${stars(Math.round(Number(p.rating)))} ${p.rating} | ${p.reviews} avaliações</div><h3>${p.nome}</h3><p class="desc">${p.desc}</p><div class="prices">${p.precoAntigo?`<span class="old">Antes ${money(p.precoAntigo)}</span>`:''}<span class="price">${money(p.preco)}</span></div><div class="term">Prestação: ${p.prazo}</div><div class="pay-buttons"><button class="btn btn-primary" onclick='abrirWhats(${JSON.stringify(p)},"pagamento na hora")'>Pagar na hora</button><button class="btn btn-gold" onclick='abrirWhats(${JSON.stringify(p)},"pagamento a prestação")'>A prestação</button></div><button class="review-toggle" onclick="toggleReview('${p.id}')">Ver / adicionar avaliação</button></div>${reviewHTML(p.id)}</article>`).join('');empty.style.display=vis.length?'none':'block'}
+  function toggleReview(id){document.getElementById('rev-'+id).classList.toggle('open')}
+  function salvarReview(e,id){e.preventDefault();const f=e.target;const novo={n:f.nome.value.trim(),s:Number(f.nota.value),t:f.texto.value.trim()};const atuais=JSON.parse(localStorage.getItem('reviews_'+id)||'[]');atuais.unshift(novo);localStorage.setItem('reviews_'+id,JSON.stringify(atuais));render();setTimeout(()=>document.getElementById('rev-'+id).classList.add('open'),50)}
+  document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filtro=b.dataset.filter;render()}));search.addEventListener('input',render);
+  document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('menu').classList.toggle('open'));document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+  window.addEventListener('scroll',()=>{document.getElementById('topBtn').style.display=scrollY>700?'block':'none'});
+  render();
+  </script>
 </body>
 </html>
