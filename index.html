@@ -96,7 +96,18 @@
   };
   const grid=document.getElementById('products'), search=document.getElementById('search'), empty=document.getElementById('empty'); let filtro='todos';
   function money(v){return v?`MT ${v.toLocaleString('pt-MZ')}`:'Consultar'}
-  function mensagemProduto(p,tipo){return encodeURIComponent(`Olá, AUSTIN Cosméticos. Gostaria de reservar o produto: ${p.nome}.\nPreço: ${money(p.preco)}.\nForma de pagamento: ${tipo}.\nPrazo da prestação: ${p.prazo}.\nLocalização: Chimoio - 7 de Abril.`)}
+  function mensagemProduto(p,tipo){
+    const linhas=[
+      'Olá, AUSTIN Cosméticos. Gostaria de reservar o produto: '+p.nome+'.',
+      'Preço: '+money(p.preco)+'.',
+      'Forma de pagamento: '+tipo+'.'
+    ];
+    if(tipo==='pagamento a prestação'){
+      linhas.push('Prazo para pagamento: '+p.prazo+'.');
+    }
+    linhas.push('Localização: Chimoio - 7 de Abril.');
+    return encodeURIComponent(linhas.join('\n'));
+  }
   function abrirWhats(p,tipo){window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagemProduto(p,tipo)}`,'_blank','noopener,noreferrer')}
   function contactarGeral(){const m=encodeURIComponent('Olá, AUSTIN Cosméticos. Gostaria de mais informações sobre os produtos INUKA e formas de pagamento.');window.open(`https://wa.me/${numeroWhatsApp}?text=${m}`,'_blank','noopener,noreferrer')}
   function getReviews(id){return [...(reviewsBase[id]||[]),...JSON.parse(localStorage.getItem('reviews_'+id)||'[]')]}
